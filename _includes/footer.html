@@ -1,38 +1,14 @@
-<footer class="site-footer">
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
-      </div>
-    </div>
-
-  </div>
-
+{% comment %}
+Source: http://tachyons.io/components/footers/social/index.html
+{% endcomment %}
+<footer class="pv4 ph3 ph5-ns tc">
+  {% if site.twitter_username %}
+  <a class="link dim gray dib h2 w2 br-100 mr3" href="https://twitter.com/{{ site.twitter_username }}" title="My Twitter account">
+    {% include icon-twitter.svg %}
+  </a>
+  {% endif %}
+  <a class="link dim gray dib h2 w2 br-100 mr3" href="{{ site.repository_url }}" title="Git repository of this blog">
+    {% include icon-github.svg %}
+  </a>
+  <a href="{{ site.repository_url }}/issues/new" class="f6 link dim gray dib mr3 mr4-ns">Send feedback</a>
 </footer>
